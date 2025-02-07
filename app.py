@@ -42,5 +42,9 @@ def GenAI_result():
     r = model.generate_content(q)
     return(render_template("GenAI_result.html",r = r.candidates[0].content.parts[0].text))
 
+@app.route("/paynow",methods = ["GET","POST"])
+def paynow():
+    return(render_template("paynow.html"))
+
 if __name__ == '__main__':
     app.run()
